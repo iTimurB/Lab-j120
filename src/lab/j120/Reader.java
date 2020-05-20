@@ -7,19 +7,17 @@ public class Reader {
 
     private static final String FileNameProduct = "reassesment.csv";
     Object line;
-    String result = "";
     List<Product> fullStack = new ArrayList<Product>();
 
     public void reader() {
-        String line;
 
         Scanner scan = null;
-        try (BufferedReader br = new BufferedReader(new FileReader(FileNameProduct))){
-       // try (InputStream input = new FileInputStream(FileNameProduct)) {
-       //     scan = new Scanner(input);
+        try (BufferedReader br = new BufferedReader(new FileReader(FileNameProduct))) {
+            // try (InputStream input = new FileInputStream(FileNameProduct)) {
+            //     scan = new Scanner(input);
             scan.useDelimiter(";");
-while ((line = br.readLine()) != null){
-          //  while (!scan.equals(null)) {
+            while ((line = br.readLine()) != null) {
+                //  while (!scan.equals(null)) {
                 Product newProduct = null;
 //= new Product((Integer) obj, (String) obj1, (String) obj2, (Double) obj3, (Integer) obj4);
                 Object obj = scan.next();
