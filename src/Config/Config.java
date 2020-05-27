@@ -1,4 +1,4 @@
-package lab.j120;
+package Config;
 
 import java.io.*;
 import java.util.Properties;
@@ -6,6 +6,13 @@ import java.util.Properties;
 public class Config {
 
     private static Config instance;
+
+    private Properties properties;
+    
+    public Properties getProperties() {
+        return properties;
+    }        
+
     public static Config getInstance() throws IOException {
         if (instance == null) {
             try {
@@ -28,18 +35,12 @@ public class Config {
             e.printStackTrace();
         }
 
-        properties = new Properties(defaultProperties);
+        Properties properties = new Properties(defaultProperties);
         try {
             properties.load(new FileInputStream("D:\\All\\!Project\\Lab-J120\\src\\Config\\user.properties"));
         }
         catch (IOException e) {
             e.printStackTrace();
         }
-
     }
-    private Properties properties;
-    public Properties getProperties() {
-        return properties;
-    }
-
 }
