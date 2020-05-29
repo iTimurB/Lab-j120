@@ -1,4 +1,4 @@
-package lab.j120;
+package Base;
 
 public class ContactForm extends javax.swing.JFrame {
 

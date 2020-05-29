@@ -1,28 +1,32 @@
-package lab.j120;
+package Base;
 
 import java.io.Serializable;
+import java.util.Objects;
 
-public class Product implements Serializable{
+public class Product implements Serializable {
 
-    private Integer article;
+    private Long article;
     private String name;
     private String color;
     private Double cost;
     private Integer balance;
 
-    public Product(Integer article, String name, String color, Double cost, Integer balance) {
+    public Product() {
+    }
+
+    public Product(Long article, String name, String color, Double cost, Integer balance) {
         this.article = article;
         this.name = name;
         this.color = color;
         this.cost = cost;
         this.balance = balance;
-    }            
+    }
 
-    public Integer getArticle() {
+    public Long getArticle() {
         return article;
     }
 
-    public void setArticle(Integer article) {
+    public void setArticle(Long article) {
         this.article = article;
     }
 
@@ -59,9 +63,28 @@ public class Product implements Serializable{
     }
 
     @Override
-    public String toString() {
-        return "Product{" + "article=" + article + ", name=" + name + ", color=" + color + ", cost=" + cost + ", balance=" + balance + '}';
+    public boolean equals(Object o) {
+        if (o == this) {
+            return true;
+        }
+        if (o.getClass() != getClass()) {
+            return false;
+        }
+        if (o == null) {
+            return false;
+        }
+
+        Product pr = (Product) o;
+        return this.article.equals(pr.article);
     }
 
-   
+    @Override
+    public int hashCode() {
+        return Objects.hash(article);
+    }
+
+    @Override
+    public String toString() {
+        return "\n" + "article = " + article + ", name = " + name + ", color = " + color + ", cost = " + cost + ", balance = " + balance;
+    }
 }

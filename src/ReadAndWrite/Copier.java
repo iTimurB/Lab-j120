@@ -1,5 +1,6 @@
-package lab.j120;
+package ReadAndWrite;
 
+import Base.*;
 import java.io.*;
 import java.time.LocalDate;
 import java.util.logging.Level;
@@ -12,7 +13,8 @@ public class Copier {
     public void copyOrder() {
         ContactDate contactDate = new ContactDate("NY", "5 avenue", 10, 25);
         Person person = new Person("Smith", "Adams", contactDate, 55552675);
-        ListOfOrder listOfOrder = new ListOfOrder("Table", 1, 2500.00);
+        Product product = new Product();
+        ListOfOrder listOfOrder = new ListOfOrder(product, Integer.SIZE);
         Order order = new Order(LocalDate.now(), person, "ready", listOfOrder);
         
         saveOrder(order);

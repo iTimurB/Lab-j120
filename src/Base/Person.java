@@ -1,4 +1,4 @@
-package lab.j120;
+package Base;
 
 import java.io.Serializable;
 
@@ -31,6 +31,40 @@ public class Person implements Serializable{
     public Integer getTelefonNumber() {
         return telefonNumber;
     }
+    
+    @Override
+    public boolean equals(Object o) {
+        if (o == this) {
+            return true;
+        }
+        if (o.getClass() != getClass()) {
+            return false;
+        }
+        if (o == null) {
+            return false;
+        }
+        Person person = (Person) o;
+        if (name != person.name) {
+            return false;
+        }
+        if (lastName != person.lastName) {
+            return false;
+        }
+        if (address != person.address) {
+            return false;
+        }
+        return telefonNumber.equals(person.telefonNumber);
+    }
+    
+    @Override
+    public int hashCode() {
+        int res = telefonNumber.hashCode();
+        res = 31 * res + name.hashCode();
+        res = 31 * res + lastName.hashCode();
+        res = 31 * res + address.hashCode();
+        return res;
+    }
+    
 
     @Override
     public String toString() {
