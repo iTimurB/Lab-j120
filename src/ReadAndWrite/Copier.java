@@ -15,7 +15,7 @@ public class Copier {
         Person person = new Person("Smith", "Adams", contactDate, 55552675);
         Product product = new Product();
         ListOfOrder listOfOrder = new ListOfOrder(product, Integer.SIZE);
-        Order order = new Order(LocalDate.now(), person, "ready", listOfOrder);
+        Order order = new Order(LocalDate.MAX, person, Short.MIN_VALUE, FileNameOrder, listOfOrder);
         
         saveOrder(order);
         Order newOrder = readOrder(FileNameOrder);

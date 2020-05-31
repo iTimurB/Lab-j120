@@ -44,16 +44,16 @@ public class ContactDate implements Serializable {
             return false;
         }
         ContactDate cd = (ContactDate) o;
+         if (city != cd.city) {
+            return false;
+        }        
         if (street != cd.street) {
             return false;
         }
         if (numberBuild != cd.numberBuild) {
             return false;
-        }
-        if (numderOffice != cd.numderOffice) {
-            return false;
-        }
-        return city.equals(cd.city);
+        }        
+        return numderOffice.equals(cd.numderOffice);
     }
 
     @Override
