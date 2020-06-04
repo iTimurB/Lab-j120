@@ -8,7 +8,7 @@ import java.util.*;
 
 public class Main {
 
-    public static HashSet<Product> productslist = new HashSet();
+    public static HashSet<ListOfOrder> list = new HashSet();
     public static TreeMap<Integer, Order> orderList = new TreeMap<>();
     public static List<Person> listOfPerson = new ArrayList();
 

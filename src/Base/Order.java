@@ -9,12 +9,14 @@ public class Order implements Serializable{
 
     private LocalDate orderDate;
     private Person person;
+    private Short discount;
     private String statusOfOrder;
     private HashSet<Product> listProducts;
 
-    public Order(LocalDate orderDate, Person person, String statusOfOrder, ListOfOrder listOfOrder) {
+    public Order(LocalDate orderDate, Person person, Short discount, String statusOfOrder, ListOfOrder listOfOrder) {
         this.orderDate = orderDate;
         this.person = person;
+        this.discount = discount;
         this.statusOfOrder = statusOfOrder;
         this.listProducts = listProducts;
     }
@@ -35,6 +37,14 @@ public class Order implements Serializable{
 
     public Person getPerson() {
         return person;
+    }
+
+    public Short getDiscount() {
+        return discount;
+    }
+
+    public void setDiscount(Short discount) {
+        this.discount = discount;
     }
 
     public String getStatusOfOrder() {                    
