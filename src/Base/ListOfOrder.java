@@ -1,9 +1,8 @@
 package Base;
 
-import java.io.Serializable;
 import java.util.Objects;
 
-public class ListOfOrder implements Serializable {
+public class ListOfOrder {
 
     private Product product;
     private Integer count;

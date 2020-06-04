@@ -1,9 +1,8 @@
 package Base;
 
-import java.io.Serializable;
 import java.util.Objects;
 
-public class Product implements Serializable {
+public class Product {
 
     private Long article;
     private String name;

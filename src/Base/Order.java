@@ -1,35 +1,34 @@
 package Base;
 
-import java.io.Serializable;
+import PersonsDate.Person;
 import java.time.LocalDate;
 import java.util.HashSet;
 import java.util.Objects;
 
-public class Order implements Serializable{
+public class Order {
 
     private LocalDate orderDate;
     private Person person;
     private Short discount;
     private String statusOfOrder;
-    private HashSet<Product> listProducts;
+    private HashSet<ListOfOrder> listOfOrder;
 
     public Order(LocalDate orderDate, Person person, Short discount, String statusOfOrder, ListOfOrder listOfOrder) {
         this.orderDate = orderDate;
         this.person = person;
         this.discount = discount;
         this.statusOfOrder = statusOfOrder;
-        this.listProducts = listProducts;
+        this.listOfOrder = this.listOfOrder;
     }
 
-    public HashSet<Product> getListProducts() {
-        return listProducts;
+    public HashSet<ListOfOrder> getListOfOrder() {
+        return listOfOrder;
     }
 
-    public void setListProducts(HashSet<Product> listProducts) {
-        this.listProducts = listProducts;
+    public void setListOfOrder(HashSet<ListOfOrder> listOfOrder) {
+        this.listOfOrder = listOfOrder;
     }
     
-
     public LocalDate getOrderDate() {
         this.orderDate = LocalDate.now();
         return orderDate;
@@ -50,6 +49,10 @@ public class Order implements Serializable{
     public String getStatusOfOrder() {                    
         return statusOfOrder;
     }   
+
+    public void setStatusOfOrder(String statusOfOrder) {
+        this.statusOfOrder = statusOfOrder;
+    }
 
     @Override
     public boolean equals(Object obj) {
@@ -72,7 +75,7 @@ public class Order implements Serializable{
         if (!Objects.equals(this.person, other.person)) {
             return false;
         }        
-        return listProducts.equals(other.listProducts);
+        return listOfOrder.equals(other.listOfOrder);
     }
 
      @Override
@@ -81,13 +84,13 @@ public class Order implements Serializable{
         hash = 47 * hash + Objects.hashCode(this.orderDate);
         hash = 47 * hash + Objects.hashCode(this.person);
         hash = 47 * hash + Objects.hashCode(this.statusOfOrder);
-        hash = 47 * hash + Objects.hashCode(this.listProducts);
+        hash = 47 * hash + Objects.hashCode(this.listOfOrder);
         return hash;
     }
     
     @Override
     public String toString() {
-        return "Order{" + "orderDate=" + orderDate + ", person=" + person + ", statusOfOrder=" + statusOfOrder + ", listProducts=" + listProducts + '}';
+        return "Order{" + "orderDate=" + orderDate + ", person=" + person + ", statusOfOrder=" + statusOfOrder + ", listProducts=" + listOfOrder + '}';
     }
 
    

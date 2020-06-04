@@ -1,14 +1,15 @@
-package lab.j120;
+package Bin;
 
 import Base.*;
 import Config.Config;
+import PersonsDate.Person;
 import ReadAndWrite.*;
 import java.io.IOException;
 import java.util.*;
 
 public class Main {
 
-    public static HashSet<ListOfOrder> list = new HashSet();
+    public static HashSet<ListOfOrder> listOfOrders = new HashSet();
     public static TreeMap<Integer, Order> orderList = new TreeMap<>();
     public static List<Person> listOfPerson = new ArrayList();
 

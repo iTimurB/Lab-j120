@@ -1,4 +1,4 @@
-package Base;
+package AnyForm;
 
 public class ContactForm extends javax.swing.JFrame {
 
